@@ -19,13 +19,10 @@ pip install -r requirements.txt
 # login data:
 Note that I have included the database with the repository, you do not have to do migrations again
 ##### first user:-
-username: admin
-password: admin
+username: admin and password: admin
 
 ##### second user:-
-username: ahmed
-password: ahmed012732
-
+username: ahmed and password: ahmed012732
 
 press on "welcome, admin" to see your profile data and edit it.
 
