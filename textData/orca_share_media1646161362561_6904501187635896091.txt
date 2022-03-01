@@ -1,0 +1,22 @@
+def profile_edit(request):
+    profile=Profile.objects.get(user=request.user)
+    if request.method=='POST':
+        user_form = userform(request.POST,request.FILES,instance=request.user)
+        profile_form = profileform(request.POST,instance=profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            myprofile=profile_form.save(commit=False)
+            myprofile.user=request.user
+            myprofile.save()
+            return redirect(reverse('accounts:profile'))
+        
+    else:
+        user_form = userform(instance=request.user)
+        profile_form = profileform(instance=profile)
+        
+    context={
+        'user_form':userform,
+        'profile_form':profileform
+    }
+        
+    return render(request,'account/profile_edit.html',context)
