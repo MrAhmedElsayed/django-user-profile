@@ -1,8 +1,11 @@
 # django-profile
+
+### good but not nice because `id` in `url` 
+
  That is was a problem to someone he can't update his Profile, then Done !! I did it.
 
 ##  Note: 
-I use Django signals to create a profile when you create a new user
+I use `Django signals` to create a profile when you create a new user
 
 ##  install: 
 
@@ -14,6 +17,12 @@ cd django-profile
 virtualenv venv
 
 pip install -r requirements.txt
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py runserver
 ```
 
 # login data:
